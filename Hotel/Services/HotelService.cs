@@ -15,7 +15,7 @@ public class HotelService(Entities.Hotel hotel)
             return;
         }
         
-        var success = room.CheckIn(guest);
+        var success = room.CheckIn(guest, hotel);
 
         if (!success)
         {

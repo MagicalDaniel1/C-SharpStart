@@ -15,7 +15,7 @@ public class Room(int roomNumber, int floor, RoomType roomType, ViewType viewTyp
     public bool IsClean { get; set; } = isClean;
     public Guest? Guest { get; set; } = guest;
 
-    public bool CheckIn(Guest guest)
+    public bool CheckIn(Guest guest, Hotel hotel)
     {
         if (IsOccupied || !IsClean)
         {
@@ -34,7 +34,8 @@ public class Room(int roomNumber, int floor, RoomType roomType, ViewType viewTyp
             return false;
         }
         
-        guest.Budget -= totalCost;
+        guest.budget -= totalCost;
+        hotel.TotalRevenue += totalCost;
         IsOccupied = true;
         Guest = guest;
 

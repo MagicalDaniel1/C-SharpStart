@@ -25,9 +25,9 @@ public class Program
         grandHotel.AddEmployee(manager);
         grandHotel.AddEmployee(housekeeper);
 
-        var guest = new Guest("Emmy", "Vampir", "emmvaaaall@gmail.com", "+38 051 045 1212", 99999, 100m);
+        var guest = new Guest("Emmy", "Vampir", "emmvaaaall@gmail.com", "+38 051 045 1212", 99999, 11100m);
         guest.StayDays = 2;
-        luxuryDeRoom.CheckIn(guest);
+        luxuryDeRoom.CheckIn(guest, grandHotel);
         
         luxuryDeRoom.Fridge.AddDrink(new Drink("Coca-Cola", 15m));
         luxuryDeRoom.Fridge.AddDrink(new Drink("Whiskey", 150m));

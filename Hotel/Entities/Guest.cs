@@ -3,14 +3,14 @@
 public class Guest(string name, string surname, string email, string phoneNumber, int age, decimal budget)
     : Person(name, surname, email, phoneNumber, age)
 {
-    public decimal Budget { get; set; }
+    public decimal budget { get; set; } = budget;
     public int StayDays { get; set; }
     
     public decimal GetBudget()
     {
-        Console.WriteLine($"Getting budget... Budget: {Budget}");
+        Console.WriteLine($"Getting budget... Budget: {budget}");
         
-        return Budget;
+        return budget;
     }
 
     public void TakeDrink(Room room, string drinkName, Hotel hotel)
@@ -23,7 +23,7 @@ public class Guest(string name, string surname, string email, string phoneNumber
 
         if (budget >= drink.Cost)
         {
-            Budget -= drink.Cost;
+            budget -= drink.Cost;
             hotel.AddProfit(drink.Cost);
             
             room.Fridge.Drinks.Remove(drink);
